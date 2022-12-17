@@ -5,7 +5,7 @@ Created on Mon Nov 28 22:51:13 2022
 @author: Yasin
 """
 
-from oyun_lib2 import Oyun
+from game_lib import Oyun
 
     
 oyun = Oyun()
