@@ -84,7 +84,7 @@ class Oyun:
                     self.harita[Ci][Cj] = 0       
                 else:
                     flag = 1
-            if (time.time() - start) > 1.5:
+            if (time.time() - start) > 2:
                 self.init()
                 return
             self.harita[Ci][Cj] = "C"
@@ -348,7 +348,7 @@ class Oyun:
                     print("STUCK LOSE!")
 
         self.draw_background()
-        self.draw_numbers2()
+        self.draw_numbers()
         pg.display.flip()
 
         if self.Hi == self.Oi and self.Hj == self.Oj:
