@@ -12,3 +12,4 @@ oyun = Oyun()
 oyun.run()
 
     
+    p9p0
