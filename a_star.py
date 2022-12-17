@@ -40,40 +40,6 @@ def calculate_current(current_index, min_cost):
             min_index = i
     
     return min_index
- 
-def calculate_move_util(all_path):
-    path = []
-    i = 0
-    while i < len(all_path):
-        if len(path) > 0:
-            if all_path[i][0] == path[-1][0] and abs(all_path[i][1] - path[-1][1]) == 1:
-                path.append(all_path[i])
-                if len(path) > 4:
-                    if path[-4][0] == path[-1][0] and abs(path[-4][1] - path[-1][1]) == 1:
-                        path.pop(len(path)-3)
-                        path.pop(len(path)-3)
-                    elif path[-4][1] == path[-1][1] and abs(path[-4][0] - path[-1][0]) == 1:
-                        path.pop(len(path)-3)
-                        path.pop(len(path)-3)
-            elif all_path[i][1] == path[-1][1] and abs(all_path[i][0] - path[-1][0]) == 1:
-                path.append(all_path[i])
-                if len(path) > 4:
-                    if path[-4][0] == path[-1][0] and abs(path[-4][1] - path[-1][1]) == 1:
-                        path.pop(len(path)-3)
-                        path.pop(len(path)-3)
-                    elif path[-4][1] == path[-1][1] and abs(path[-4][0] - path[-1][0]) == 1:
-                        path.pop(len(path)-3)
-                        path.pop(len(path)-3)
-        else:
-            path.append(all_path[i])
-        i += 1
-    i = 0
-    while i < len(path):
-        if path.count(path[i]) > 1:
-            path.pop(i)
-        i += 1
-    
-    return path
 
 def calculate_move(matrix_cost, all_path):
     all_path.reverse()
@@ -179,19 +145,3 @@ def a_star(harita, start_i, start_j, goal_i, goal_j, who="B"):
     if current_coordinats[0] == goal_i and current_coordinats[1] == goal_j:
         return calculate_move(matrix_cost, all_path)
     return -1, -1
-
-
-def display1(matrix):
-    print("")
-    print("")
-    for i in matrix:
-        for j in i:
-            print(j,end=" ")
-        print("")
-
-def display2(path):
-    print("")
-    for i in path:
-        print(i)
-        
-        
