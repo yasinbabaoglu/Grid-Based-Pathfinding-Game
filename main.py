@@ -10,6 +10,3 @@ from oyun_lib2 import Oyun
     
 oyun = Oyun()
 oyun.run()
-
-    
-    p9p0
